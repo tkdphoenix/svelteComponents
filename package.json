@@ -1,0 +1,76 @@
+{
+  "name": "intro-storybook-svelte-template",
+  "version": "1.0.0",
+  "description": "Reusable web components build with Svelte framework",
+  "private": true,
+  "author": "Chromatic <https://chromatic.com/>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chromaui/intro-storybook-svelte-template"
+  },
+  "bugs": {
+    "url": "https://github.com/chromaui/intro-storybook-svelte-template/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "build-storybook": "build-storybook -s public",
+    "dev": "rollup -c -w",
+    "start": "sirv public",
+    "storybook": "start-storybook -p 6006 -s public",
+    "test": "jest --watchAll",
+    "update": "npx npm-check -u"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@storybook/addon-actions": "^6.3.0",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.3.0",
+    "@storybook/addon-svelte-csf": "^1.1.0",
+    "@storybook/svelte": "^6.1.21",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@testing-library/svelte": "^3.0.3",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.2",
+    "jest": "^27.3.1",
+    "rollup": "^2.3.4",
+    "rollup-plugin-copy-assets": "^2.0.3",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.31.2",
+    "svelte-jester": "^2.1.5",
+    "svelte-loader": "^3.1.2"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      "^.+\\.svelte$": "svelte-jester"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "svelte",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss|stylesheet)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "testEnvironment": "jsdom",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/build/",
+      "/storybook-static/"
+    ]
+  }
+}
